@@ -1,0 +1,8 @@
+<script src="https://unpkg.com/vue"></script>
+
+<div id="app">
+    {{ weather }}
+    <img :src= "'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'">
+</div>
+
+<script src="main.js"></script>
