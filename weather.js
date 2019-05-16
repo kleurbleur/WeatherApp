@@ -1,7 +1,7 @@
 var weather = require('openweather-apis');
  
 weather.setLang('en');
-weather.setCity('The Hague');
+weather.setCity('Bangkok');
 
  // or set the coordinates (latitude,longitude)
 // weather.setCoordinate(50.0467656, 20.0048731);

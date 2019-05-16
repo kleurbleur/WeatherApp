@@ -1,8 +1,29 @@
 <script src="https://unpkg.com/vue"></script>
 
+
+
 <div id="app">
-    {{ weather }}
-    <img :src= "'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'">
+    <div id="group">
+        <div id="locationpicker">
+            <input v-model="city">
+            <button v-on:click="getWeather">Search</button>
+        </div>
+
+        <div id="date"> {{ new Date(weather.dt * 1000).toDateString() }} </div>
+        <div id="icon"> 
+            <img :src= "'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'"> 
+        </div>
+        <div id="city"> <span>Location: </span> {{ weather.name }}, {{ weather.sys.country}} </div>
+        <div id="temp"> <span>{{ weather.main.temp }}</span> ºC</div>
+        <div id="details"> 
+            <div id="clouds"><span>Cloudiness: </span> {{ weather.clouds.all }}%</div>
+            <div id="temp_details"><span>Tempurature (min/max): </span>{{ weather.main.temp_min }} ºC / {{ weather.main.temp_max }} ºC</div>
+            <div id="humidity"><span>Humidity: </span> {{ weather.main.humidity  }}% </div>
+            <div id="pressure"><span>Pressure: </span> {{ weather.main.pressure }} hPa </div>
+            <div id="wind"><span>Wind: </span> {{ weather.wind.speed }} m/s  {{ weather.wind.deg }}º </div>
+        </div>
+
+    </div>
 </div>
 
 <script src="main.js"></script>

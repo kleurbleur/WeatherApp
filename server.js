@@ -12,5 +12,8 @@ app.get('/api', (req, res) => {
 
 app.use(express.static('frontend'))
 
+weather.getAllWeather(function(err, JSONObj){
+    console.log(JSONObj)
+});
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`I'm live on port ${port}!`))
