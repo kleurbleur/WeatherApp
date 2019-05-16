@@ -1,7 +1,5 @@
 <script src="https://unpkg.com/vue"></script>
 
-
-
 <div id="app">
     <div id="group">
         <div id="locationpicker">
@@ -9,7 +7,7 @@
             <button v-on:click="getWeather">Search</button>
         </div>
 
-        <div id="date"> {{ new Date(weather.dt * 1000).toDateString() }} </div>
+        <div id="date"> {{ weather.dt }} </div>
         <div id="icon"> 
             <img :src= "'http://openweathermap.org/img/w/' + weather.weather[0].icon + '.png'"> 
         </div>

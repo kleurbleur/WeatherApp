@@ -1,7 +1,3 @@
-Vue.component('todo-item', {
-    props: ['todo'],
-    template: '<li>{{ todo.text }}</li>'
-})
 
 var app = new Vue({
     el: '#app',
@@ -17,13 +13,13 @@ var app = new Vue({
             })
     },
     methods: {
-        getWeather: function(city){
-            this.weather.name = city
-            // x = api.openweathermap.org/data/2.5/weather?q={city}
-            // .then( x => x.json())
-            // .then( x => {
-            //     this.weather = x
-            // })
+        getWeather: function(){
+            let city = this.city
+            x = fetch('/api/?city='+city+'&banaan=lekker')
+            .then( x => x.json())
+            .then( x => {
+                this.weather = x
+            })
         }
     }
 })
